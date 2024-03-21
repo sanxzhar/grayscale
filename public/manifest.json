@@ -1,18 +1,20 @@
 {
-    "manifest_version": 3,
-    "version": "1.0.0",
-    "name": "GRAYSCALE",
-    "action": {
-        "default_popup": "index.html"
-    },
-    "permissions": [
-        "scripting"
-    ],
-    "host_permissions": [
-        "http://*/*",
-        "https://*/*"
-    ],
-    "icons": {
-        "32": "vite.svg"
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "GRAYSCALE",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["scripting", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
     }
+  ],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "icons": {
+    "32": "vite.svg"
+  }
 }

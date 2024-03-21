@@ -3,6 +3,9 @@ import "./App.css";
 function App() {
   
   const onClick = async () => {
+    chrome.storage.local.set({grayscaleEnabled: true}, function() {
+      console.log('Grayscale is enabled.');
+    });
     const [tab] = await chrome.tabs.query({ active: true });
     chrome.scripting.executeScript({
       target: { tabId: tab.id! },
@@ -17,6 +20,9 @@ function App() {
   };
 
   const remove = async () => {
+    chrome.storage.local.set({grayscaleEnabled: false}, function() {
+      console.log('Grayscale is enabled.');
+    });
     const [tab] = await chrome.tabs.query({ active: true });
     chrome.scripting.executeScript({
       target: { tabId: tab.id! },

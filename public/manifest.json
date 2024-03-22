@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
   "version": "1.0.0",
-  "name": "GRAYSCALE",
+  "name": "Grayscale | MVP",
+  "description": "Browser extension that transforms any website into grayscale, promoting a distraction-free and focused browsing experience.",
   "action": {
     "default_popup": "index.html"
   },
@@ -15,6 +16,8 @@
   ],
   "host_permissions": ["http://*/*", "https://*/*"],
   "icons": {
-    "32": "vite.svg"
+    "16": "icon.png",
+    "24": "icon.png",
+    "32": "icon.png"
   }
 }
